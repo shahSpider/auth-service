@@ -32,6 +32,11 @@ ALLOWED_HOSTS = ['127.0.0.1']
 if os.getenv("DJANGO_ALLOWED_HOSTS"):
     ALLOWED_HOSTS += [host.strip() for host in os.getenv("DJANGO_ALLOWED_HOSTS").split(",")]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://auth-service-ucxp.onrender.com",
+    # you can add more domains here if needed
+]
+
 APPS_DIR = os.path.join(BASE_DIR, 'apps')
 
 if APPS_DIR not in sys.path:
