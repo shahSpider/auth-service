@@ -13,5 +13,5 @@ else
         --email "$DJANGO_SUPERUSER_EMAIL"
 fi
 
-# Start server
-python manage.py runserver 0.0.0.0:8000
+# Start Daphne ASGI server
+daphne -b 0.0.0.0 -p 8000 auth_service.asgi:application
