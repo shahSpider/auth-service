@@ -10,6 +10,7 @@ from rest_framework.decorators import api_view
 
 
 class CreateUserView(generics.CreateAPIView):
+    permission_classes = [permissions.AllowAny]
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
